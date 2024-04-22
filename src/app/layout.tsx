@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/app/_components/common/Header";
+
+import "./globals.css";
+import {raleway} from "@/helpers/utils/customFonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="h-full">
+      <body className={`${raleway.variable} text-14 text-grey-200 flex flex-col min-h-full bg-no-repeat bg-gradient-to-b from-black-900 to-black-800`}>
+        <Header />
+        <main className='flex-auto'>{children}</main>
+      </body>
     </html>
   );
 }

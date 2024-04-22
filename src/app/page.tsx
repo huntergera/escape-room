@@ -1,9 +1,11 @@
-import Image from "next/image";
+import CatalogNavigation from "@/app/_components/CatalogNavigation";
 
 export default function Home() {
   return (
-    <main className="">
-
-    </main>
+    <section className="container max-w-[1096px] pt-12">
+      <p className="text-orange">Квести в Одесі</p>
+      <h2 className="text-h2 text-white mt-1">В яку гру зіграємо?</h2>
+      <CatalogNavigation />
+    </section>
   );
 }
