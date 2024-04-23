@@ -1,7 +1,6 @@
 import SocialItem from "@/app/_components/common/SocialItem";
 
 import {socialsLinks} from "@/helpers/constants/common";
-import {TwitterIcon} from "@/app/_components/icons/TwitterIcon";
 
 const Socials = () => {
   return (

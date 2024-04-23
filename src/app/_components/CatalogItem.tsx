@@ -7,7 +7,7 @@ const CatalogItem: React.FC<{ quest: IQuests }> = ({ quest }) => {
     backgroundImage: `url('${quest.previewImg}')`,
   };
   return (
-    <div className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer hover:bg-[length:105%_105%] bg-center transition-transform duration-600"
+    <div className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer hover:scale-105  transition-all duration-100 ease-in"
          style={backgroundImageStyle}>
       <div className="text-h4 text-white">{quest.title}</div>
       <div className="flex">
@@ -20,7 +20,7 @@ const CatalogItem: React.FC<{ quest: IQuests }> = ({ quest }) => {
             height={16}
             priority
           />
-          <span>{quest.peopleCount[0]}-{quest.peopleCount[1]} осіб</span>
+          <span>{quest.peopleCount[0]}-{quest.peopleCount[1]} чел</span>
         </div>
         <div className="flex items-center gap-2">
           <Image
