@@ -7,7 +7,7 @@ const CatalogNavigationItem: React.FC<{ item: ICatalogNavLink }> = ({ item }) =>
     <div className="flex items-center gap-3 py-2 px-9 border-r border-grey-400 last:border-0 cursor-pointer group">
       <Image
         src={item.icon}
-        alt="404"
+        alt="icon catalog"
         className="mx-auto"
         width={30}
         height={36}

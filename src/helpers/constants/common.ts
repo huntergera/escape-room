@@ -1,4 +1,8 @@
-import {ICatalogNavLink, INavLink} from "@/interfaces/interfaces";
+import { ICatalogNavLink, INavLink, ISocialLink } from "@/interfaces/interfaces";
+
+import { InstagramIcon } from "@/app/_components/icons/InstagramIcon";
+import { TwitterIcon } from "@/app/_components/icons/TwitterIcon";
+import { YoutubeIcon } from "@/app/_components/icons/YoutubeIcon";
 
 export const navLinks: INavLink[] = [
   {
@@ -48,4 +52,22 @@ export const catalogNavLinks: ICatalogNavLink[] = [
     title: 'Sci-Fi',
     icon: '/img/icons/icon-scifi.svg'
   },
+]
+
+export const socialsLinks: ISocialLink[] = [
+  {
+    link: "#",
+    Icon: InstagramIcon,
+    color: "#8A43FF"
+  },
+  {
+    link: "#",
+    Icon: TwitterIcon,
+    color: "#3A94E7"
+  },
+  {
+    link: "#",
+    Icon: YoutubeIcon,
+    color: "#FF3535"
+  }
 ]

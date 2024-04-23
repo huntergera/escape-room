@@ -8,7 +8,7 @@ interface INavigationProps {
 
 const NavLink: React.FC<INavigationProps> = ({ item, className }) => {
     return (
-        <Link href={item.link} className={`text-gray hover:text-blue transition-colors ${className}`}>
+        <Link href={item.link} className={`text-gray hover:text-orange transition-colors ${className}`}>
             {item.title}
         </Link>
     );
