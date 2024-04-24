@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .filter-active .filter-item-span {
+        width: 100%;
+    }
+}
