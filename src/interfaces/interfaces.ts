@@ -5,7 +5,8 @@ export interface INavLink {
 
 export interface ICatalogNavLink {
   title: string,
-  icon: string
+  icon: string,
+  type: string
 }
 
 export interface ISocialLink {
@@ -27,6 +28,6 @@ export interface IQuests {
   "coverImg": string,
   "type": string,
   "level": string,
-  "peopleCount": [],
+  "peopleCount": [number, number],
   "duration": number
 }

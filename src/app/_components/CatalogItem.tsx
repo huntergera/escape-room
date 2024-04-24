@@ -7,7 +7,7 @@ const CatalogItem: React.FC<{ quest: IQuests }> = ({ quest }) => {
     backgroundImage: `url('${quest.previewImg}')`,
   };
   return (
-    <div className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer hover:scale-105  transition-all duration-100 ease-in"
+    <div className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer hover:scale-105  transition-all duration-100 ease-in rounded"
          style={backgroundImageStyle}>
       <div className="text-h4 text-white">{quest.title}</div>
       <div className="flex">

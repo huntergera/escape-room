@@ -6,51 +6,57 @@ import { YoutubeIcon } from "@/app/_components/icons/YoutubeIcon";
 
 export const navLinks: INavLink[] = [
   {
-    title: 'Квести',
-    link: '/'
+    title: "Квести",
+    link: "/"
   },
   {
-    title: 'Новачкам',
-    link: '/for-beginners'
+    title: "Новачкам",
+    link: "/for-beginners"
   },
   {
-    title: 'Відгуки',
-    link: '/reviews'
+    title: "Відгуки",
+    link: "/reviews"
   },
   {
-    title: 'Акції',
-    link: '/promotions'
+    title: "Акції",
+    link: "/promotions"
   },
   {
-    title: 'Контакти',
-    link: '/contacts'
+    title: "Контакти",
+    link: "/contacts"
   },
 ]
 
 export const catalogNavLinks: ICatalogNavLink[] = [
   {
-    title: 'Всі квести',
-    icon: '/img/icons/icon-all-quests.svg'
+    title: "Всі квести",
+    icon: "/img/icons/icon-all-quests.svg",
+    type: "all"
   },
   {
-    title: 'Пригодне',
-    icon: '/img/icons/icon-adventures.svg'
+    title: "Пригодне",
+    icon: "/img/icons/icon-adventures.svg",
+    type: "adventures"
   },
   {
-    title: 'Страшне',
-    icon: '/img/icons/icon-horrors.svg'
+    title: "Страшне",
+    icon: "/img/icons/icon-horrors.svg",
+    type: "horror"
   },
   {
-    title: 'Містичне',
-    icon: '/img/icons/icon-mystic.svg'
+    title: "Містичне",
+    icon: "/img/icons/icon-mystic.svg",
+    type: "mystic"
   },
   {
-    title: 'Детективне',
-    icon: '/img/icons/icon-detective.svg'
+    title: "Детективне",
+    icon: "/img/icons/icon-detective.svg",
+    type: "detective"
   },
   {
-    title: 'Sci-Fi',
-    icon: '/img/icons/icon-scifi.svg'
+    title: "Sci-Fi",
+    icon: "/img/icons/icon-scifi.svg",
+    type: "sci-fi"
   },
 ]
 
