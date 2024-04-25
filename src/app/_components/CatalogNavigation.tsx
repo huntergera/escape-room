@@ -1,15 +1,13 @@
+"use client";
 import CatalogNavigationItem from "@/app/_components/CatalogNavigationItem";
 
 import {catalogNavLinks} from "@/helpers/constants/common";
+import {useQuestsStore} from "@/store/store";
 
-interface CatalogNavigationProps {
-  onFilterChange: (type: string | null) => void;
-  questTypeFilter: string | null;
-}
-
-const CatalogNavigation : React.FC<CatalogNavigationProps> = ({ onFilterChange, questTypeFilter  }) => {
+const CatalogNavigation : React.FC = () => {
+  const { questTypeFilter, setQuestTypeFilter } = useQuestsStore();
   const handleClick = (type:string | null) => {
-    onFilterChange(type);
+    setQuestTypeFilter(type);
   };
 
   return (

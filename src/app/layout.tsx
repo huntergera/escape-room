@@ -17,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="min-h-full">
-      <body className={`${raleway.variable} text-14 text-grey-200 flex flex-col min-h-full bg-no-repeat bg-gradient-to-b from-black-900 to-black-800`}>
+    <html lang="en" className="">
+      <body className={`${raleway.variable} min-h-screen flex flex-col text-14 text-grey-200 bg-no-repeat bg-gradient-to-b from-black-900 to-black-800`}>
         <Header />
-        <main className='flex-auto'>{children}</main>
+        <main className=''>{children}</main>
         <Socials />
       </body>
     </html>

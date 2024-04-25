@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import {IQuests} from "@/interfaces/interfaces";
 
@@ -6,8 +7,9 @@ const CatalogItem: React.FC<{ quest: IQuests }> = ({ quest }) => {
   const backgroundImageStyle = {
     backgroundImage: `url('${quest.previewImg}')`,
   };
+
   return (
-    <div className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer hover:scale-105  transition-all duration-100 ease-in rounded"
+    <Link href={`/quests/${quest.id}`} className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer hover:scale-105  transition-all duration-100 ease-in rounded"
          style={backgroundImageStyle}>
       <div className="text-h4 text-white">{quest.title}</div>
       <div className="flex">
@@ -34,7 +36,7 @@ const CatalogItem: React.FC<{ quest: IQuests }> = ({ quest }) => {
           <span>{quest.level}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

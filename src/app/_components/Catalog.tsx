@@ -1,16 +1,13 @@
-import {useEffect} from "react";
+"use client";
+import { useEffect } from "react";
 
 import CatalogItem from "@/app/_components/CatalogItem";
 
 import { IQuests } from "@/interfaces/interfaces";
 import {useQuestsStore} from "@/store/store";
 
-interface CatalogProps {
-  questTypeFilter: string | null;
-}
-
-export default function Catalog({ questTypeFilter }: CatalogProps) {
-  const { quests, fetchQuests } = useQuestsStore();
+export default function Catalog() {
+  const { quests, fetchQuests, questTypeFilter } = useQuestsStore();
 
   useEffect(() => {
     fetchQuests();

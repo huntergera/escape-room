@@ -31,7 +31,7 @@ const config: Config = {
     },
     fontSize: {
       "h1": ["92px", {
-        lineHeight: "90px",
+        lineHeight: "87px",
         fontWeight: "900",
       }],
       "h2": ["64px", {
@@ -51,6 +51,10 @@ const config: Config = {
       }],
       "14": ["14px", {
         lineHeight: "20px",
+      }],
+      "15": ["15px", {
+        lineHeight: "22px",
+        fontWeight: "500",
       }],
     },
   },
