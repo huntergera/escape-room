@@ -6,20 +6,16 @@ interface QuestsState {
   quests: IQuests[];
   questTypeFilter: string | null;
   setQuestTypeFilter: (type: string | null) => void;
-  fetchQuests: () => Promise<void>;
+  setQuests: (quests: IQuests[]) => void;
 }
 
 export const useQuestsStore = create<QuestsState>((set) => ({
   quests: [],
   questTypeFilter: 'all',
   setQuestTypeFilter: (type) => set({ questTypeFilter: type }),
-  fetchQuests: async () => {
-    try {
-      const response = await fetch(QUESTS_API_URL);
-      const questsData = await response.json();
-      set({ quests: questsData });
-    } catch (error) {
-      console.error("Error fetching quests:", error);
-    }
+  setQuests: (quests) => {
+    set(state => ({
+      quests: quests
+    }));
   },
 }));
