@@ -1,6 +1,9 @@
-import {getQuestById} from "@/actions/quest";
 import Image from "next/image";
 import {notFound} from "next/navigation";
+
+import Button from "@/app/_components/ui/Button";
+
+import {getQuestById} from "@/actions/quest";
 
 const QuestDetails = async ({params}: { params: { questId: string } }) => {
   const quest = await getQuestById(params.questId)
@@ -52,7 +55,9 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
           </div>
         </div>
         <p className="text-15 mb-10">{quest.description}</p>
-        <button>Забронировать</button>
+        <Button className="bg-orange hover:bg-orange/90 transition-colors">
+          Забронировать
+        </Button>
       </div>
     </div>
   );
