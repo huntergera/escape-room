@@ -4,6 +4,7 @@ import {notFound} from "next/navigation";
 import Button from "@/app/_components/ui/Button";
 
 import {getQuestById} from "@/actions/quest";
+import {questDictionary} from "@/helpers/constants/common";
 
 const QuestDetails = async ({params}: { params: { questId: string } }) => {
   const quest = await getQuestById(params.questId);
@@ -17,7 +18,7 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
     <div className="min-h-screen pt-[122px] flex-auto bg-cover bg-center"
          style={backgroundImageStyle}>
       <div className="ml-[45%]">
-        <div className="text-orange mb-2">{quest.type}</div>
+        <div className="text-orange mb-2">{questDictionary[quest.type]}</div>
         <h1 className="text-h1 mb-8">{quest.title}</h1>
         <div className="flex mb-5">
           <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-400 py-2">

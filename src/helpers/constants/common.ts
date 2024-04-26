@@ -1,4 +1,4 @@
-import { ICatalogNavLink, INavLink, ISocialLink } from "@/interfaces/interfaces";
+import { ICatalogNavLink, INavLink, ISocialLink, IDictionary } from "@/interfaces/interfaces";
 
 import { InstagramIcon } from "@/app/_components/icons/InstagramIcon";
 import { TwitterIcon } from "@/app/_components/icons/TwitterIcon";
@@ -77,3 +77,14 @@ export const socialsLinks: ISocialLink[] = [
     color: "#FF3535"
   }
 ]
+
+export const questDictionary: IDictionary = {
+  horror: 'ужасы',
+  adventures: 'приключения',
+  mystic: 'мистика',
+  detective: 'детектив',
+  'sci-fi': 'Sci-fi',
+  easy: 'легкий',
+  medium: 'средний',
+  hard: 'сложный',
+};

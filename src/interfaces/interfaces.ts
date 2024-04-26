@@ -31,3 +31,7 @@ export interface IQuests {
   "peopleCount": [number, number],
   "duration": number
 }
+
+export interface IDictionary {
+  [key: string]: string;
+}
