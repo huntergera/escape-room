@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import CatalogItem from "@/app/_components/CatalogItem";
 
 import { IQuests } from "@/interfaces/interfaces";
-import {useQuestsStore} from "@/store/store";
+import { useQuestsStore } from "@/store/store";
 
-export default function Catalog() {
-  const { quests, fetchQuests, questTypeFilter } = useQuestsStore();
+const Catalog: React.FC = () => {
+  const { quests,fetchQuests , questTypeFilter } = useQuestsStore();
 
   useEffect(() => {
     fetchQuests();
@@ -25,3 +25,5 @@ export default function Catalog() {
     </div>
   );
 };
+
+export default Catalog;

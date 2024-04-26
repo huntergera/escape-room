@@ -6,7 +6,7 @@ import Button from "@/app/_components/ui/Button";
 import {getQuestById} from "@/actions/quest";
 
 const QuestDetails = async ({params}: { params: { questId: string } }) => {
-  const quest = await getQuestById(params.questId)
+  const quest = await getQuestById(params.questId);
   const backgroundImageStyle = {
     backgroundImage: `url('${quest.coverImg}')`,
   };

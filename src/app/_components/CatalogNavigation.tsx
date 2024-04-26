@@ -4,7 +4,7 @@ import CatalogNavigationItem from "@/app/_components/CatalogNavigationItem";
 import {catalogNavLinks} from "@/helpers/constants/common";
 import {useQuestsStore} from "@/store/store";
 
-const CatalogNavigation : React.FC = () => {
+const CatalogNavigation: React.FC = () => {
   const { questTypeFilter, setQuestTypeFilter } = useQuestsStore();
   const handleClick = (type:string | null) => {
     setQuestTypeFilter(type);
