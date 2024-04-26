@@ -15,7 +15,7 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
   if (!quest.id) notFound();
 
   return (
-    <div className="min-h-screen pt-[122px] flex-auto bg-cover bg-center"
+    <section className="min-h-screen pt-[122px] flex-auto bg-cover bg-center"
          style={backgroundImageStyle}>
       <div className="ml-[45%]">
         <div className="text-orange mb-2">{questDictionary[quest.type]}</div>
@@ -60,7 +60,7 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
           Забронировать
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 
