@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {notFound} from "next/navigation";
 
-import Button from "@/app/_components/ui/Button";
+import ButtonLink from "@/app/_components/ui/ButtonLink";
 
 import {getQuestById} from "@/actions/quest";
 import {questDictionary} from "@/helpers/constants/common";
@@ -60,9 +60,9 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
           </div>
         </div>
         <p className="text-15 mb-10">{quest.description}</p>
-        <Button className="bg-orange hover:bg-orange/90 transition-colors">
+        <ButtonLink href={`/quests/${quest.id}/application-form`} className="bg-orange hover:bg-orange/90 transition-colors">
           Забронировать
-        </Button>
+        </ButtonLink>
       </div>
     </section>
   );

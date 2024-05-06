@@ -1,6 +1,6 @@
 interface ButtonProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({children, className, ...props}) => {

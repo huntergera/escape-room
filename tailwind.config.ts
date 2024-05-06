@@ -25,6 +25,7 @@ const config: Config = {
       "grey-300": "#C6C4C2",
       "grey-400": "#424141",
       "orange": "#F2890F",
+      "transparent": "transparent",
     },
     fontFamily: {
       raleway : ["var(--font-raleway)"],

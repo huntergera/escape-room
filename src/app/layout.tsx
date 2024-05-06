@@ -11,18 +11,23 @@ export const metadata: Metadata = {
   description: "Quests for all",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type RootLayoutProps = {
   children: React.ReactNode;
-}>) {
+  modal: React.ReactNode;
+};
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children, modal }) => {
   return (
-    <html lang="en" className="">
+    <html lang="en">
       <body className={`${raleway.variable} min-h-screen flex flex-col text-14 text-grey-200 bg-no-repeat bg-gradient-to-b from-black-900 to-black-800`}>
         <Header />
-        <main className=''>{children}</main>
+        <main>{children}</main>
         <Socials />
+        {modal}
+        <div id="modal-root" />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
