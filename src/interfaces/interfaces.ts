@@ -20,7 +20,7 @@ export interface IconProps {
   style?: string,
 }
 
-export interface IQuests {
+export interface IQuest {
   "id": number,
   "title": string,
   "description": string,

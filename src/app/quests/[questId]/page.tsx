@@ -8,16 +8,20 @@ import {questDictionary} from "@/helpers/constants/common";
 
 const QuestDetails = async ({params}: { params: { questId: string } }) => {
   const quest = await getQuestById(params.questId);
-  const backgroundImageStyle = {
-    backgroundImage: `url('${quest.coverImg}')`,
-  };
 
   if (!quest.id) notFound();
 
   return (
-    <section className="min-h-screen pt-[122px] flex-auto bg-cover bg-center"
-         style={backgroundImageStyle}>
-      <div className="ml-[45%]">
+    <section className="min-h-screen pt-[122px] flex-auto bg-cover bg-center">
+      <Image
+        src={`/${quest.coverImg}`}
+        alt="icon person"
+        className="w-full h-full absolute top-0 left-0 z-0 object-cover"
+        width={1366}
+        height={768}
+        priority
+      />
+      <div className="ml-[45%] relative z-10">
         <div className="text-orange mb-2">{questDictionary[quest.type]}</div>
         <h1 className="text-h1 mb-8">{quest.title}</h1>
         <div className="flex mb-5">

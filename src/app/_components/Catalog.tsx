@@ -3,7 +3,7 @@ import {useEffect} from "react";
 
 import CatalogItem from "@/app/_components/CatalogItem";
 
-import { IQuests } from "@/interfaces/interfaces";
+import { IQuest } from "@/interfaces/interfaces";
 import { useQuestsStore } from "@/store/store";
 import {getAllQuests} from "@/actions/quest";
 
@@ -24,12 +24,12 @@ const Catalog: React.FC = () => {
   }, []);
 
   const filteredQuests = questTypeFilter !== 'all'
-    ? quests.filter((quest: IQuests) => quest.type === questTypeFilter)
+    ? quests.filter((quest: IQuest) => quest.type === questTypeFilter)
     : quests;
 
   return (
     <div className="mt-10 mb-10 grid grid-cols-3 gap-x-6 gap-y-8">
-      {filteredQuests.map((quest: IQuests) => (
+      {filteredQuests.map((quest: IQuest) => (
         <CatalogItem key={quest.id} quest={quest} />
       ))}
     </div>

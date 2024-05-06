@@ -6,4 +6,8 @@
     .filter-active .filter-item-span {
         width: 100%;
     }
+
+    .icon:hover {
+        fill: red;
+    }
 }

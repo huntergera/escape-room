@@ -1,12 +1,12 @@
 import create from "zustand";
-import {IQuests} from "@/interfaces/interfaces";
+import {IQuest} from "@/interfaces/interfaces";
 import {QUESTS_API_URL} from "@/helpers/constants/api";
 
 interface QuestsState {
-  quests: IQuests[];
+  quests: IQuest[];
   questTypeFilter: string | null;
   setQuestTypeFilter: (type: string | null) => void;
-  setQuests: (quests: IQuests[]) => void;
+  setQuests: (quests: IQuest[]) => void;
 }
 
 export const useQuestsStore = create<QuestsState>((set) => ({
