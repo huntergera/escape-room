@@ -46,9 +46,13 @@ const ApplicationForm = () => {
       />
       <Button
         type="submit"
-        className="bg-orange hover:bg-orange/90 transition-colors mt-12">
+        className="bg-orange hover:bg-orange/90 transition-colors mt-12 mx-auto flex">
         Відправити заявку
       </Button>
+      <div className="mt-4">
+        <input id="agree" type="checkbox"/>
+        <label htmlFor="agree">Я согласен с правилами обработки персональных данных и пользовательским соглашением</label>
+      </div>
     </form>
   );
 };
