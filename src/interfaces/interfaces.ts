@@ -35,3 +35,9 @@ export interface IQuest {
 export interface IDictionary {
   [key: string]: string;
 }
+
+export interface IForm {
+  userName: string,
+  tel: number,
+  participantsNumber: number,
+}
