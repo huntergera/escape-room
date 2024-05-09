@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 
 import Header from "@/app/_components/common/Header";
+import { ToastContainer } from "react-toastify";
+import Socials from "@/app/_components/common/Socials";
 
 import "./globals.css";
 import {raleway} from "@/helpers/utils/customFonts";
-import Socials from "@/app/_components/common/Socials";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: "Escape room",
@@ -25,6 +27,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children, modal }) => {
         <Socials />
         {modal}
         <div id="modal-root" />
+        <ToastContainer />
       </body>
     </html>
   );

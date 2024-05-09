@@ -5,7 +5,7 @@ import CatalogItem from "@/app/_components/CatalogItem";
 
 import { IQuest } from "@/interfaces/interfaces";
 import { useQuestsStore } from "@/store/store";
-import {getAllQuests} from "@/actions/quest";
+import {getAllQuests} from "@/actions";
 
 const Catalog: React.FC = () => {
   const { quests,setQuests , questTypeFilter } = useQuestsStore();

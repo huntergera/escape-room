@@ -38,7 +38,7 @@ export interface IDictionary {
 
 export interface IForm {
   userName: string,
-  tel: number,
+  tel: string,
   participantsNumber: number,
   privateDataAgreement: boolean,
 }
@@ -48,3 +48,10 @@ export type ValidFieldNames =
   | 'tel'
   | 'participantsNumber'
   | 'privateDataAgreement';
+
+export interface IOrder {
+  name: string
+  phone: string
+  peopleCount: number
+  isLegal: boolean
+}

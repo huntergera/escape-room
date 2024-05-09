@@ -1,1 +1,1 @@
-export const QUESTS_API_URL = "http://localhost:3001/quests/";
+export const MAIN_API_URL = "http://localhost:3001/";

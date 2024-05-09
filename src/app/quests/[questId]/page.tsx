@@ -3,7 +3,7 @@ import {notFound} from "next/navigation";
 
 import ButtonLink from "@/app/_components/ui/ButtonLink";
 
-import {getQuestById} from "@/actions/quest";
+import {getQuestById} from "@/actions";
 import {questDictionary} from "@/helpers/constants/common";
 
 const QuestDetails = async ({params}: { params: { questId: string } }) => {

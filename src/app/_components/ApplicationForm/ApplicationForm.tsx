@@ -2,28 +2,51 @@
 import React from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 
 import Input from "@/app/_components/ui/Input";
 import Button from "@/app/_components/ui/Button";
 import Checkbox from "@/app/_components/ui/Checkbox";
+import Loading from "@/app/loading";
 
 import { IForm } from "@/interfaces/interfaces";
 import { validationSchema } from "@/app/_components/ApplicationForm/form";
-import logo from "@/app/_components/common/Logo";
+import { createOrder } from "@/actions";
+import { showSuccess } from "@/helpers/utils/toasts";
 
 const ApplicationForm = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isSubmitting },
   } = useForm<IForm>({
     mode: 'onChange',
     resolver: zodResolver(validationSchema),
   })
-  const onSubmit: SubmitHandler<IForm> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<IForm> = async (data) => {
+    try {
+      const orderData = {
+        name: data.userName,
+        peopleCount: data.participantsNumber,
+        phone: data.tel,
+        isLegal: data.privateDataAgreement,
+      };
+      await createOrder(orderData);
+      router.back();
+      showSuccess("Заявка відправлена, в найближчий час з ваши зв'яжеться оператор для уточнення даних");
+    } catch (error) {
+      console.error("Error creating order:", error);
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="relative"
+    >
+      {isSubmitting && <Loading className="absolute top-0 left-0 w-full h-full" />}
       <div className="text-h3 mb-10">Залишити заявку</div>
       <Input
         label="Ваше ім'я"
