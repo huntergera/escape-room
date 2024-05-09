@@ -19,7 +19,7 @@ const CatalogItem: React.FC<{ quest: IQuest }> = ({ quest }) => {
       <div className="relative z-10">
         <div className="text-h4 text-white">{quest.title}</div>
         <div className="flex">
-          <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-400">
+          <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-500">
             <Image
               src="/img/icons/icon-person.svg"
               alt="icon person"

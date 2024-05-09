@@ -21,14 +21,16 @@ const Checkbox: React.FC<CheckboxProps> = ({
   name,
 }) => {
   return (
-    <div className={`${className} flex items-start gap-2`}>
-      <input
-        id={id}
-        type="checkbox"
-        {...register(name)}
-        className="mt-1"
-      />
-      <label htmlFor={id}>{text}</label>
+    <div className={className}>
+      <div className="flex items-start gap-2">
+        <input
+          id={id}
+          type="checkbox"
+          {...register(name)}
+          className="mt-1"
+        />
+        <label htmlFor={id}>{text}</label>
+      </div>
       {error && <p className="text-orange mt-1">{error.message}</p>}
     </div>
   );

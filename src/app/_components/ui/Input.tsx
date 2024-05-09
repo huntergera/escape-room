@@ -1,19 +1,20 @@
 import React from 'react';
-import {FieldValues, UseFormRegister, Path, FieldError} from "react-hook-form";
+import { UseFormRegister, FieldError} from "react-hook-form";
+import { IForm, ValidFieldNames } from "@/interfaces/interfaces";
 
-interface IInput<T extends FieldValues> {
+interface IInput {
   label?: string,
   placeholder?: string,
   className?: string,
-  register: UseFormRegister<T>;
+  register: UseFormRegister<IForm>;
   valueAsNumber?: boolean;
-  name: Path<T>;
+  name: ValidFieldNames;
   error?: FieldError;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   type?: string,
 }
 
-const Input = <T extends object> ({
+const Input: React.FC<IInput>  = ({
   label,
   placeholder,
   className,
@@ -23,7 +24,7 @@ const Input = <T extends object> ({
   error,
   onChange,
   type = valueAsNumber ? "number" : "text",
-} : IInput<T>) => {
+}) => {
   return (
     <div className={`flex flex-col ${className}`}>
       <label className="mb-3">{label}</label>

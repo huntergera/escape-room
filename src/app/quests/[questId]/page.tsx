@@ -25,7 +25,7 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
         <div className="text-orange mb-2">{questDictionary[quest.type]}</div>
         <h1 className="text-h1 mb-8">{quest.title}</h1>
         <div className="flex mb-5">
-          <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-400 py-2">
+          <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-500 py-2">
             <Image
               src="/img/icons/icon-clock.svg"
               alt="icon person"
@@ -36,7 +36,7 @@ const QuestDetails = async ({params}: { params: { questId: string } }) => {
             />
             {quest.duration} мин
           </div>
-          <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-400 py-2">
+          <div className="flex items-center gap-2 mr-3 pr-3 border-r border-grey-500 py-2">
             <Image
               src="/img/icons/icon-person.svg"
               alt="icon person"

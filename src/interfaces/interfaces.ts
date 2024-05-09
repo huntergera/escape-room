@@ -44,7 +44,7 @@ export interface IForm {
 }
 
 export type ValidFieldNames =
-  | 'name'
+  | 'userName'
   | 'tel'
   | 'participantsNumber'
   | 'privateDataAgreement';

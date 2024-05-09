@@ -1,7 +1,8 @@
 interface ButtonProps {
   children: React.ReactNode;
   className?: string;
-  type?: "submit" | "reset" | "button" | undefined
+  type?: "submit" | "reset" | "button" | undefined,
+  disabled: boolean,
 }
 
 const Button: React.FC<ButtonProps> = ({

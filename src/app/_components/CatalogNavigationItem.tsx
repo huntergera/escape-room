@@ -10,7 +10,7 @@ interface CatalogNavigationItemProps {
 
 const CatalogNavigationItem: React.FC<CatalogNavigationItemProps> = ({ item, onClick, isActive  }) => {
   return (
-    <div className={`flex items-center gap-3 py-2 px-9 border-r border-grey-400 last:border-0 cursor-pointer group ${isActive ? 'filter-active' : ''}`}
+    <div className={`flex items-center gap-3 py-2 px-9 border-r border-grey-500 last:border-0 cursor-pointer group ${isActive ? 'filter-active' : ''}`}
          onClick={onClick}
     >
       <Image
