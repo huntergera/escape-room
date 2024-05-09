@@ -10,8 +10,9 @@ interface IInput {
   valueAsNumber?: boolean;
   name: ValidFieldNames;
   error?: FieldError;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
   type?: string,
+  required?: string,
+  minLength?: { value: number; message: string }
 }
 
 const Input: React.FC<IInput>  = ({
@@ -22,8 +23,9 @@ const Input: React.FC<IInput>  = ({
   valueAsNumber,
   name,
   error,
-  onChange,
+  required,
   type = valueAsNumber ? "number" : "text",
+  minLength
 }) => {
   return (
     <div className={`flex flex-col ${className}`}>
@@ -32,8 +34,12 @@ const Input: React.FC<IInput>  = ({
         type={type}
         placeholder={placeholder}
         {...register(name, {
-          onChange,
+          required,
           valueAsNumber,
+          minLength: minLength ? {
+            value: minLength.value,
+            message: minLength.message
+          } : undefined
         })}
         className="rounded outline-none py-3 px-8 border-[#777676] border border-solid bg-transparent text-[#9D9C9C] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
       />
