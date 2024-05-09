@@ -8,6 +8,7 @@ import Button from "@/app/_components/ui/Button";
 
 import { IForm } from "@/interfaces/interfaces";
 import { validationSchema } from "@/app/_components/ApplicationForm/form";
+import Checkbox from "@/app/_components/ui/Checkbox";
 
 const ApplicationForm = () => {
   const {
@@ -28,14 +29,15 @@ const ApplicationForm = () => {
         className="mb-8"
         register={register}
         name="userName"
+        error={errors.userName}
       />
       <Input<IForm>
         label="Контактний телефон"
         placeholder="Телефон"
         className="mb-8"
         register={register}
-        valueAsNumber
         name="tel"
+        error={errors.tel}
       />
       <Input<IForm>
         label="Кількість учасників"
@@ -43,16 +45,21 @@ const ApplicationForm = () => {
         register={register}
         valueAsNumber
         name="participantsNumber"
+        error={errors.participantsNumber}
       />
       <Button
         type="submit"
         className="bg-orange hover:bg-orange/90 transition-colors mt-12 mx-auto flex">
         Відправити заявку
       </Button>
-      <div className="mt-4">
-        <input id="agree" type="checkbox"/>
-        <label htmlFor="agree">Я согласен с правилами обработки персональных данных и пользовательским соглашением</label>
-      </div>
+      <Checkbox
+        register={register}
+        name="privateDataAgreement"
+        error={errors.privateDataAgreement}
+        className="mt-4"
+        id="agree"
+        text="Я согласен с правилами обработки персональных данных и пользовательским соглашением"
+      />
     </form>
   );
 };

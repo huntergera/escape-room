@@ -40,4 +40,11 @@ export interface IForm {
   userName: string,
   tel: number,
   participantsNumber: number,
+  privateDataAgreement: boolean,
 }
+
+export type ValidFieldNames =
+  | 'name'
+  | 'tel'
+  | 'participantsNumber'
+  | 'privateDataAgreement';

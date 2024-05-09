@@ -1,5 +1,5 @@
 import React from 'react';
-import { FieldValues, UseFormRegister, Path } from "react-hook-form";
+import {FieldValues, UseFormRegister, Path, FieldError} from "react-hook-form";
 
 interface IInput<T extends FieldValues> {
   label?: string,
@@ -8,6 +8,7 @@ interface IInput<T extends FieldValues> {
   register: UseFormRegister<T>;
   valueAsNumber?: boolean;
   name: Path<T>;
+  error?: FieldError;
   onChange?: React.ChangeEventHandler<HTMLInputElement>;
   type?: string,
 }
@@ -19,6 +20,7 @@ const Input = <T extends object> ({
   register,
   valueAsNumber,
   name,
+  error,
   onChange,
   type = valueAsNumber ? "number" : "text",
 } : IInput<T>) => {
@@ -34,6 +36,7 @@ const Input = <T extends object> ({
         })}
         className="rounded outline-none py-3 px-8 border-[#777676] border border-solid bg-transparent text-[#9D9C9C] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
       />
+      {error && <span className="text-orange mt-1">{error.message}</span>}
     </div>
   );
 };
