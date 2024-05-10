@@ -22,7 +22,7 @@ export async function getAllQuests() {
 
 export async function createOrder(orderData: IOrder) {
   try {
-    const response = await fetch(`${MAIN_API_URL}ordrs`, {
+    const response = await fetch(`${MAIN_API_URL}orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
