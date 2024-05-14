@@ -1,31 +1,16 @@
-"use client";
-import {useEffect} from "react";
-
 import CatalogItem from "@/app/_components/CatalogItem";
 
 import { IQuest } from "@/interfaces/interfaces";
-import { useQuestsStore } from "@/store/store";
-import {getAllQuests} from "@/actions";
+import { getAllQuests } from "@/actions";
 
-const Catalog: React.FC = () => {
-  const { quests,setQuests , questTypeFilter } = useQuestsStore();
+interface IQuestsProps {
+  filter: string | undefined
+}
 
-  useEffect(() => {
-    const fetchQuests = async () => {
-      try {
-        const allQuests = await getAllQuests();
-        setQuests(allQuests);
-      } catch (error) {
-        console.error("Error fetching quests:", error);
-      }
-    };
+const Catalog: React.FC<IQuestsProps> = async ({ filter = 'all' }) =>  {
+  const quests = await getAllQuests();
 
-    fetchQuests();
-  }, []);
-
-  const filteredQuests = questTypeFilter !== 'all'
-    ? quests.filter((quest: IQuest) => quest.type === questTypeFilter)
-    : quests;
+  const filteredQuests = filter === 'all' ? quests : quests.filter((quest: IQuest) => quest.type === filter);
 
   return (
     <div className="mt-10 mb-10 grid grid-cols-3 gap-x-6 gap-y-8">

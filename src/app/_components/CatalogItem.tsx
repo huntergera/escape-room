@@ -4,8 +4,6 @@ import Link from "next/link";
 import { IQuest } from "@/interfaces/interfaces";
 
 const CatalogItem: React.FC<{ quest: IQuest }> = ({ quest }) => {
-
-  console.log(quest.previewImg)
   return (
     <Link href={`/quests/${quest.id}`} className="p-5 min-h-[232px] flex flex-col justify-end cursor-pointer group transition-all duration-100 ease-in rounded relative overflow-hidden">
       <Image

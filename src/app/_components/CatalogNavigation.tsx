@@ -1,14 +1,12 @@
-"use client";
 import CatalogNavigationItem from "@/app/_components/CatalogNavigationItem";
 
 import {catalogNavLinks} from "@/helpers/constants/common";
-import {useQuestsStore} from "@/store/store";
 
-const CatalogNavigation: React.FC = () => {
-  const { questTypeFilter, setQuestTypeFilter } = useQuestsStore();
-  const handleClick = (type:string | null) => {
-    setQuestTypeFilter(type);
-  };
+interface ICatalogNavigationProps {
+  filter: string | undefined
+}
+
+const CatalogNavigation: React.FC<ICatalogNavigationProps> = ({ filter }) => {
 
   return (
     <div className="flex mt-12">
@@ -16,8 +14,7 @@ const CatalogNavigation: React.FC = () => {
         <CatalogNavigationItem
           key={index}
           item={item}
-          onClick={() => handleClick(item.type)}
-          isActive={item.type === questTypeFilter}
+          filter={filter}
         />
       )}
     </div>
