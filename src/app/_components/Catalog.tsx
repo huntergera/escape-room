@@ -29,7 +29,7 @@ const Catalog: React.FC = () => {
 
   return (
     <div className="mt-10 mb-10 grid grid-cols-3 gap-x-6 gap-y-8">
-      {filteredQuests.map((quest: IQuest) => (
+      {filteredQuests?.map((quest: IQuest) => (
         <CatalogItem key={quest.id} quest={quest} />
       ))}
     </div>

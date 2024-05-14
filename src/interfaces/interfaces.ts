@@ -28,7 +28,7 @@ export interface IQuest {
   "coverImg": string,
   "type": string,
   "level": string,
-  "peopleCount": [number, number],
+  "peopleCount": number[],
   "duration": number
 }
 
