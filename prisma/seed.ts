@@ -4,11 +4,9 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  for (let quest of quests) {
-    await prisma.quest.create({
-      data: quest
-    })
-  }
+  await prisma.quest.createMany({
+    data: quests,
+  });
 }
 
 main().catch(e => {

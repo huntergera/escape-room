@@ -1,15 +1,18 @@
 import Image from "next/image";
-import {notFound} from "next/navigation";
+import { notFound } from "next/navigation";
 
 import ButtonLink from "@/app/_components/ui/ButtonLink";
 
-import {getQuestById} from "@/actions";
-import {questDictionary} from "@/helpers/constants/common";
+import { getQuestById } from "@/actions";
+import { questDictionary } from "@/helpers/constants/common";
 
 const QuestDetails = async ({params}: { params: { questId: string } }) => {
   const quest = await getQuestById(params.questId);
 
-  if (!quest.id) notFound();
+  if (quest === null) {
+    notFound();
+    return null;
+  }
 
   return (
     <section className="min-h-screen pt-[122px] flex-auto bg-cover bg-center">
