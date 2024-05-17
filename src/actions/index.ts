@@ -6,7 +6,7 @@ import { showError } from "@/helpers/utils/toasts";
 const prisma = new PrismaClient();
 
 export async function getQuestById(id: string) {
-  if (isNaN(id)) return null;
+  if (isNaN(+id)) return null;
 
   const quest = await prisma.quest.findUnique({
     where: {
