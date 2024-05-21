@@ -43,15 +43,27 @@ export interface IForm {
   privateDataAgreement: boolean,
 }
 
-export type ValidFieldNames =
-  | 'userName'
-  | 'tel'
-  | 'participantsNumber'
-  | 'privateDataAgreement';
+export interface IRegistrationForm {
+  userName: string,
+  email: string,
+  password: string,
+  privateDataAgreement: boolean,
+}
+
+export interface ILoginForm {
+  email: string,
+  password: string,
+}
 
 export interface IOrder {
   name: string
   phone: string
   peopleCount: number
   isLegal: boolean
+}
+export interface IAccount {
+  name: string
+  email: string
+  password: string
+  isAgreeRules: boolean
 }

@@ -1,25 +1,25 @@
 import React from 'react';
-import { FieldError, UseFormRegister } from "react-hook-form";
+import {FieldError, FieldValues, Path, UseFormRegister} from "react-hook-form";
 
-import { IForm, ValidFieldNames } from "@/interfaces/interfaces";
+import { IForm } from "@/interfaces/interfaces";
 
-interface CheckboxProps {
-  name: ValidFieldNames,
+interface CheckboxProps<T extends FieldValues> {
+  name: Path<T>,
   className: string,
   id: string,
   text: string,
-  error?: FieldError;
-  register: UseFormRegister<IForm>,
+  error?: FieldError,
+  register: UseFormRegister<T>,
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const Checkbox= <T extends object> ({
   className,
   id,
   text,
   error,
   register,
   name,
-}) => {
+} : CheckboxProps<T>) => {
   return (
     <div className={className}>
       <div className="flex items-start gap-2">
