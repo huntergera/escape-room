@@ -8,10 +8,9 @@ import Loading from "@/app/loading";
 import Input from "@/app/_components/ui/Input";
 import Button from "@/app/_components/ui/Button";
 
-import {ILoginForm, IRegistrationForm} from "@/interfaces/interfaces";
-import {validationSchema} from "@/app/_components/LoginForm/form";
-import {logInAccount} from "@/actions";
-import Checkbox from "@/app/_components/ui/Checkbox";
+import { ILoginForm } from "@/interfaces/interfaces";
+import { validationSchema } from "@/app/_components/LoginForm/form";
+import { logInAccount } from "@/actions";
 
 const LoginForm = () => {
 
@@ -27,8 +26,6 @@ const LoginForm = () => {
     resolver: zodResolver(validationSchema),
   })
   const onSubmit: SubmitHandler<ILoginForm> = async (data) => {
-    console.log(243)
-    debugger
     try {
       const orderData = {
         email: data.email,
@@ -75,8 +72,7 @@ const LoginForm = () => {
       <Button
         type="submit"
         disabled={false}
-        // className={`transition-colors mt-12 mx-auto flex ${isValid ? 'bg-orange hover:bg-orange/90' : 'bg-grey-400'}`}
-        className={`transition-colors mt-12 mx-auto flex bg-orange hover:bg-orange/90`}
+        className={`transition-colors mt-12 mx-auto flex ${isValid ? 'bg-orange hover:bg-orange/90' : 'bg-grey-400'}`}
       >
         Enter
       </Button>

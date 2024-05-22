@@ -67,3 +67,8 @@ export interface IAccount {
   password: string
   isAgreeRules: boolean
 }
+
+export interface ILogin {
+  email: string
+  password: string
+}
