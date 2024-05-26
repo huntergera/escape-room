@@ -90,7 +90,7 @@ export async function logInAccount(accountData: ILogin) {
 export async function logout() {
   try {
     cookies().set('loggedIn', '');
-    window.location.reload();
+    return { shouldRedirect: true };
   } catch (error) {
     console.error("Error logging out:", error);
     throw new Error((error as Error).message);
