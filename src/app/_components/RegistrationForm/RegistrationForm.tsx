@@ -37,7 +37,7 @@ const RegistrationForm = () => {
       await createAccount(orderData);
       router.push('/');
       // redirect('/')
-    } catch (error) {
+    } catch (error: any) {
       if (error.message === 'An account with this data already exists') {
         setError('root', {
           type: 'error',

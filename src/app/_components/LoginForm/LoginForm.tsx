@@ -33,7 +33,7 @@ const LoginForm = () => {
       };
       await logInAccount(orderData);
       router.push('/');
-    } catch (error) {
+    } catch (error: any) {
       if (error.message === 'Email or password is incorrect, please enter again') {
         setError('root', {
           type: 'error',
